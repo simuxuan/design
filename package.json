@@ -1,0 +1,20 @@
+{
+  "name": "design",
+  "version": "1.0.0",
+  "description": "面向对象：抽象、继承、封装、多态",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simuxuan/design.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simuxuan/design/issues"
+  },
+  "homepage": "https://github.com/simuxuan/design#readme"
+}

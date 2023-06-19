@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class IStorage {
+        save() {
+          throw new Error("必须实现该方法");
+        }
+        read() {
+          throw new Error("必须实现该方法");
+        }
+      }
+      // 方法实现
+      class LocalStorage extends IStorage {
+        save(key, value) {
+          localStorage.setItem(key, value);
+        }
+        read(key) {
+          return localStorage.getItem(key);
+        }
+      }
+
+      // 调用者
+      class User {
+        constructor(name, storage) {
+          this.name = name;
+          this.storage = storage;
+        }
+        save(key, value) {
+          this.storage.save(key, value);
+        }
+        read(key) {
+          return this.storage.read(key);
+        }
+      }
+
+      let user = new User("张三", new LocalStorage());
+      // 只需关注方法，不需要关注实现
+      user.save('username','smx');
+      let res =  user.read('username');
+      console.log(res);
+    </script>
+  </body>
+</html>
